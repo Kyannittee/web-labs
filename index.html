@@ -2,13 +2,99 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моя первая лабораторная</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- настройки для мобильных устройств -->
+    <title>Food Сonstruct</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Привет, мир!</h1>
-    <p>Это моя первая страница для лабораторной работы.</p>
-    <!-- Здесь вы будете добавлять свой контент -->
+    <!-- Шапка сайта -->
+    <header>
+        <h1>Food Construct</h1>
+        <nav>
+            <a href="#about">О нас</a>
+            <a href="#pack">Собрать ланч</a>
+            <a href="#orders">Заказы</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main>
+        <!-- Блок с информацией о компании -->
+        <section id="about">
+            <h2>О нашей компании</h2>
+            <img src="images/image1.jpg" alt="Еда нашего ресторана">
+            <p>Food Construct - доставка бизнес-ланчей в Москве. Мы привезем вам горячую вкусную еду в любую точку города к назначенному времени.</p>
+        </section>
+
+        <!-- Блок с преимуществами -->
+        <section id="advantages">
+            <h2>Наши преимущества</h2>
+            <ul>
+                <li>Привозим обед к назначенному времени без опозданий</li>
+                <li>Надежно упаковываем блюда в удобные контейнеры бесплатно</li>
+                <li>Доставляем ланчи весь день с 7:00 до 23:00</li>
+                <li>Уютная атмосфера и внимательный персонал</li>
+                <li>Вегетарианские и безглютеновые опции</li>
+            </ul>
+        </section>
+
+        <!-- Блок с популярными блюдами -->
+        <section id="popular">
+            <h2>Самые популярные блюда</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Блюдо</th>
+                        <th>Кол-во заказов в неделю</th>
+                        <th>Цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Жареная картошка с грибами</td>
+                        <td>132</td>
+                        <td>150₽</td>
+                    </tr>
+                    <tr>
+                        <td>Паста Карбонара</td>
+                        <td>128</td>
+                        <td>300₽</td>
+                    </tr>
+                    <tr>
+                        <td>Салат Цезарь</td>
+                        <td>113</td>
+                        <td>350₽</td>
+                    </tr>
+                    <tr>
+                        <td>Борщ со сметаной</td>
+                        <td>95</td>
+                        <td>200₽</td>
+                    </tr>
+                    <tr>
+                        <td>Тирамису</td>
+                        <td>89</td>
+                        <td>400₽</td>
+                    </tr>
+                    <tr>
+                        <td>Куриный шашлычок</td>
+                        <td>85</td>
+                        <td>350₽</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer id="contacts">
+        <h2>Контакты</h2>
+        <p>г. Москва</p>
+        <p>Телефон: <a href="tel:+74951234567">+7 (000) 000 00 00 </a></p>
+        <p>Часы работы: ежедневно с 7:00 до 23:00</p>
+    </footer>
 </body>
 </html>
