@@ -1,0 +1,142 @@
+/* Стили для страницы "Собрать ланч" */
+
+/* Блок с блюдами - Grid сетка */
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+/* Блок каждого блюда - Flex контейнер */
+.dish-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 35px;
+    cursor: pointer;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Изображение блюда */
+.dish-card img {
+    width: 100%;
+    height: 180px; /* Фиксированная высота для десктопа */
+    object-fit: cover;
+    border-radius: 35px;
+    margin-bottom: 1rem;
+}
+
+/* Цена блюда */
+.dish-price {
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Название блюда */
+.dish-name {
+    font-size: 1.2rem !important;
+    font-weight: 500 !important;
+    color: #333 !important;
+    margin-bottom: 0.5rem !important;
+    flex-grow: 1;
+}
+
+/* Вес/объем блюда */
+.dish-weight {
+    color: #666 !important;
+    font-size: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Кнопка Добавить */
+.add-btn {
+    background-color: #f1eee9;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: auto;
+    transition: all 0.3s ease;
+    color: #2c3e50;
+}
+
+/* Hover эффекты */
+.dish-card:hover {
+    border: 2px solid #3498db; 
+}
+
+.dish-card:hover .add-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Навигационное меню - Flexbox */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Активная ссылка */
+#active {
+    color: #3498db !important; 
+}
+
+/* Адаптивность для страницы "Собрать ланч" */
+
+/* ≤800px */
+@media (max-width: 800px) {
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dish-card img {
+        height: 160px; /* Фиксированная высота для планшетов */
+    }
+    
+    nav {
+        justify-content: space-between;
+    }
+    
+    header h1 {
+        text-align: center;
+    }
+}
+
+/* ≤600px */
+@media (max-width: 600px) {
+    .dishes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dish-card img {
+        height: 200px; /* Увеличиваем высоту для мобильных */
+    }
+    
+    .dish-card {
+        min-height: 420px; /* Немного меньше минимальная высота */
+        padding: 20px 25px; /* Уменьшаем отступы на мобильных */
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        font-size: calc(1.1rem + 4px) !important;
+    }
+    
+    section h2 {
+        text-align: center;
+    }
+}
