@@ -91,6 +91,219 @@ nav {
     color: #3498db !important; 
 }
 
+/* Стили для формы заказа */
+#order-form {
+    margin-top: 2rem;
+    padding: 1rem 0;
+}
+
+.form-container {
+    max-width: 1000px;      
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.form-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;             
+    align-items: start;
+}
+
+/* Компактные колонки */
+.order-column, .customer-column {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.order-column h3, .customer-column h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="time"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #666;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+    max-width: 350px;
+}
+
+.form-group select {
+    max-width: 350px;
+}
+
+/* Стили для подсказок */
+.form-hint {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    color: #666;
+    font-style: italic;
+    max-width: 350px;
+}
+
+/* Стили для чекбокса и радиокнопок */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 350px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 350px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.radio-option input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+.radio-option label {
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+/* Стили для кнопок */
+.form-buttons {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    max-width: 350px;
+}
+
+.reset-btn, .submit-btn {
+    padding: 0.6rem 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    background: white;
+}
+
+.reset-btn {
+    color: #666;
+    border-color: #ccc;
+}
+
+.reset-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.submit-btn {
+    color: #333;
+    border-color: #666;
+}
+
+.submit-btn:hover {
+    background-color: #f5f5f5;
+}
+
+/* Стиль для блока с подсказкой */
+.form-hint-block {
+    margin: -0.3rem 0 1rem 0;
+    padding: 0.3rem 0;
+    max-width: 350px;
+}
+
+.form-hint-block small {
+    color: #666;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+/* Адаптивность для формы */
+@media (max-width: 768px) {
+    .form-columns {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .order-column, .customer-column {
+        padding: 1.5rem;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+}
+
 /* Адаптивность для страницы "Собрать ланч" */
 
 /* ≤800px */
@@ -119,12 +332,12 @@ nav {
     }
     
     .dish-card img {
-        height: 200px; /* Увеличиваем высоту для мобильных */
+        height: 200px; 
     }
     
     .dish-card {
-        min-height: 420px; /* Немного меньше минимальная высота */
-        padding: 20px 25px; /* Уменьшаем отступы на мобильных */
+        min-height: 420px; 
+        padding: 20px 25px; 
     }
     
     nav {

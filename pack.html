@@ -152,12 +152,125 @@
         </section>
     </main>
 
-    
-    <footer id="contacts">
+    <!-- Форма заказа -->
+<section id="order-form">
+    <div class="form-container">
+        <h2>Сделать заказа</h2>
+        <form id="lunch-order-form" action="https://httpbin.org/post" method="POST">
+            <div class="form-columns">
+                <!-- Блок с заказом клиента -->
+                <div class="order-column">
+                    <h3>Ваш заказ</h3>
+                    
+                    <div class="form-group">
+                        <label for="soup">Суп</label>
+                        <select id="soup" name="soup" required>
+                            <option value="">– Выберите суп –</option>
+                            <option value="borshch">Борщ со сметаной - 200₽</option>
+                            <option value="chicken-soup">Куриный суп с лапшой - 180₽</option>
+                            <option value="mushroom-cream">Грибной крем-суп - 220₽</option>
+                            <option value="tom-yam">Том Ям с креветками - 280₽</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="main-dish">Главное блюдо</label>
+                        <select id="main-dish" name="main_dish" required>
+                            <option value="">– Выберите главное блюдо –</option>
+                            <option value="carbonara">Паста Карбонара - 300₽</option>
+                            <option value="chicken-shashlik">Куриный шашлычок - 350₽</option>
+                            <option value="fried-potatoes">Жареная картошка с грибами - 150₽</option>
+                            <option value="beef-stroganoff">Бефстроганов - 320₽</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="drink">Напиток</label>
+                        <select id="drink" name="drink" required>
+                            <option value="">– Выберите напиток –</option>
+                            <option value="orange-juice">Апельсиновый сок - 150₽</option>
+                            <option value="cranberry-juice">Клюквенный морс - 120₽</option>
+                            <option value="cappuccino">Капучино - 180₽</option>
+                            <option value="green-tea">Зеленый чай - 100₽</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Комментарии к заказу</label>
+                        <textarea id="comment" name="comment" rows="4" placeholder="Ваши пожелания..."></textarea>
+                    </div>
+                </div>
+                
+                <!-- Блок с данными клиента -->
+                <div class="customer-column">
+                    <h3>Данные для доставки</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                        <label for="newsletter">Получать информацию о скидках и акциях</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Номер телефона</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Адрес доставки</label>
+                        <input type="text" id="address" name="address" required>
+                        <small class="form-hint">Доставка осуществляется только по Москве</small>
+                    </div>
+                    
+                    <!-- Блок выбора типа доставки -->
+                    <div class="form-group">
+                        <label>Время доставки:</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="time-soon" name="delivery_time" value="soon" required>
+                                <label for="time-soon">Как можно скорее</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="time-specific" name="delivery_time" value="specific" required>
+                                <label for="time-specific">К указанному времени</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Блок для указания конкретного времени -->
+                    <div class="form-group">
+                        <label for="specific-time">Укажите время доставки</label>
+                        <input type="time" id="specific-time" name="specific_time" min="07:00" max="23:00" step="300">
+                    </div>
+
+                    <!-- Подпись о доступном времени -->
+                    <div class="form-hint-block">
+                        <small>Доступное время доставки с 7:00 до 23:00</small>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="reset" class="reset-btn">Сбросить</button>
+                        <button type="submit" class="submit-btn">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+ <footer id="contacts">
         <h2>Контакты</h2>
         <p>г. Москва</p>
         <p>Телефон: <a href="tel:+74951234567">+7 (000) 000 00 00</a></p>
         <p>Часы работы: ежедневно с 7:00 до 23:00</p>
     </footer>
-</body>
-</html>
+    
