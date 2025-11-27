@@ -431,7 +431,8 @@ nav {
     gap: 10px;
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start; /* Меняем с center на flex-start */
+    position: relative;
 }
 
 .filter-btn {
@@ -449,17 +450,25 @@ nav {
 
 .filter-btn:hover {
     background-color: #f8f9fa;
+    transform: translateY(-2px);
 }
 
 .filter-btn.active {
     background-color: #3498db;
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.filters::before {
+    display: none;
 }
 
 /* Адаптивность для фильтров */
 @media (max-width: 600px) {
     .filters {
         gap: 5px;
+        justify-content: center; 
     }
     
     .filter-btn {
