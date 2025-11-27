@@ -353,3 +353,117 @@ nav {
         text-align: center;
     }
 }
+
+/* Стили для отображения заказа */
+.order-display {
+    margin-bottom: 2rem;
+    padding: 0; 
+}
+
+.order-summary h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+}
+
+.order-category {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.order-category:last-of-type {
+    border-bottom: none;
+}
+
+.order-category strong {
+    color: #495057;
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.order-category p {
+    color: #6c757d;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.order-total {
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.order-total strong {
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.order-total p {
+    color: #27ae60;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0 0 0;
+}
+
+.no-selection {
+    color: #6c757d;
+    font-style: italic;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* Анимация при выборе блюда */
+.dish-card.selected {
+    border: 2px solid #27ae60;
+    background-color: #f8fff9;
+}
+
+.dish-card.selected .add-btn {
+    background-color: #27ae60;
+    color: white;
+}
+
+/* Стили для фильтров */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 2px solid #3498db;
+    background-color: white;
+    color: #3498db;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #f8f9fa;
+}
+
+.filter-btn.active {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Адаптивность для фильтров */
+@media (max-width: 600px) {
+    .filters {
+        gap: 5px;
+    }
+    
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
