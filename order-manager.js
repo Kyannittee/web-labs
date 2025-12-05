@@ -1,11 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
-    let selectedDishes = {//объект для хранения выбранных блюд
+let selectedDishes = {//объект для хранения выбранных блюд
         soup: null,
         main: null,
         drink: null,
         salad: null,    
         dessert: null 
     };
+
+document.addEventListener('DOMContentLoaded', function() {
+    
     
     // Инициализируем отображение заказа
     updateOrderDisplay();
@@ -26,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function selectDish(dish) {//Обновляет выбранное блюдо и перерисовывает интерфейс.
         selectedDishes[dish.category] = dish;//записывает блюдо в соответствующую категорию
         updateOrderDisplay();//обновляет отображение заказа на странице
-        updateFormSelects();
     }
     
     function updateOrderDisplay() {

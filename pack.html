@@ -13,6 +13,7 @@
     <script src="display-dishes.js" defer></script>
     <script src="order-manager.js" defer></script>
     <script src="filters.js" defer></script>
+    <script src="notifications.js" defer></script>
 </head>
 <body>
     
@@ -29,6 +30,117 @@
 
     
     <main>
+        
+        <!-- Блок с доступными комбо -->
+        <section id="combo-section">
+            <h2>Доступные для заказа комбо</h2>
+            
+            <!-- GRID КОНТЕЙНЕР на 3 колонки -->
+            <div class="combos-grid">
+                <!-- Комбо 1 -->
+                <div class="combo-card" data-combo="1">
+                    <div class="combo-items-container">
+                        <div class="combo-item">
+                            <img src="images/soup.png" alt="Суп">
+                            <span>Суп</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="images/main.png" alt="Главное блюдо">
+                            <span>Главное блюдо</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="images/salad.png" alt="Салат">
+                            <span>Салат</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="images/drink.png" alt="Напиток">
+                            <span>Напиток</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Комбо 2 -->
+                <div class="combo-card" data-combo="2">
+                    <div class="combo-items-container">
+                        <div class="combo-item">
+                            <img src="images/soup.png" alt="Суп">
+                            <span>Суп</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="images/main.png" alt="Главное блюдо">
+                            <span>Главное блюдо</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="images/drink.png" alt="Напиток">
+                            <span>Напиток</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Комбо 3 -->
+                <div class="combo-card" data-combo="3">
+                    <div class="combo-items-container">
+                        <div class="combo-item">
+                            <img src="images/soup.png" alt="Суп">
+                            <span>Суп</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="images/salad.png" alt="Салат">
+                            <span>Салат</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="images/drink.png" alt="Напиток">
+                            <span>Напиток</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Комбо 4 -->
+                <div class="combo-card" data-combo="4">
+                    <div class="combo-items-container">
+                        <div class="combo-item">
+                            <img src="images/main.png" alt="Главное блюдо">
+                            <span>Главное блюдо</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="images/salad.png" alt="Салат">
+                            <span>Салат</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="images/drink.png" alt="Напиток">
+                            <span>Напиток</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Комбо 5 -->
+                <div class="combo-card" data-combo="5">
+                    <div class="combo-items-container">
+                        <div class="combo-item">
+                            <img src="images/main.png" alt="Главное блюдо">
+                            <span>Главное блюдо</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="images/drink.png" alt="Напиток">
+                            <span>Напиток</span>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="dessert-card" data-combo="dessert">
+                    <div class="dessert-content">
+                        <div class="dessert-item">
+                            <img src="images/desert.png" alt="Десерт">
+                            <span>Десерт</span>
+                        </div>
+                        <div class="dessert-note">
+                            <p>Можно добавить к любому заказу</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <section id="soups">
             <h2>Выберите супы</h2>
