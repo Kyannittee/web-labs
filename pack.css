@@ -733,3 +733,24 @@ nav {
         transform: scale(1);
     }
 }
+
+/* Красные кнопки фильтров для мясных салатов */
+.filter-btn.red-filter {
+    border: 2px solid #e74c3c !important;
+    color: #e74c3c !important;
+    background-color: #ffeaea !important;
+}
+
+.filter-btn.red-filter:hover {
+    background-color: #e74c3c !important;
+    color: white !important;
+    border-color: #e74c3c !important;
+}
+
+.filter-btn.red-filter.active {
+    background-color: #e74c3c !important;
+    color: white !important;
+    border-color: #e74c3c !important;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3) !important;
+}
+

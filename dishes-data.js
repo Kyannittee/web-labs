@@ -175,6 +175,33 @@ const dishes = [
         image: "images/Черный чай.jpg",
         kind: "hot" // горячий
     },
+    {
+        keyword: "cola",
+        name: "Кока-кола",
+        price: 110,
+        category: "drink",
+        count: "400 мл",
+        image: "images/Кола.jpg",
+        kind: "carbonated" // газированный
+    },
+    {
+        keyword: "sprite",
+        name: "Спрайт",
+        price: 110,
+        category: "drink",
+        count: "400 мл",
+        image: "images/Спрайт.jpg",
+        kind: "carbonated" // газированный
+    },
+    {
+        keyword: "fanta",
+        name: "Фанта",
+        price: 110,
+        category: "drink",
+        count: "400 мл",
+        image: "images/Фанта.jpg",
+        kind: "carbonated" // газированный
+    },
 
     // ==================== САЛАТЫ И СТАРТЕРЫ ====================
     {
@@ -230,6 +257,24 @@ const dishes = [
         count: "240 г",
         image: "images/Киноа.jpg",
         kind: "veg" 
+    },
+    {
+        keyword: "olivier",
+        name: "Оливье",
+        price: 220,
+        category: "salad",
+        count: "240 г",
+        image: "images/Оливье.jpg",
+        kind: "meat" 
+    },
+    {
+        keyword: "meat-salad",
+        name: "Салат из копченой грудинки",
+        price: 280,
+        category: "salad",
+        count: "240 г",
+        image: "images/Мясной салат.jpg",
+        kind: "meat" 
     },
 
 
@@ -287,6 +332,33 @@ const dishes = [
         count: "220 г",
         image: "images/Наполеон.jpg",
         kind: "large" 
-    }
+    },
+    {
+        keyword: "cake",
+        name: "Ягодный торт",
+        price: 1000,
+        category: "dessert",
+        count: "800 г",
+        image: "images/Ягодный торт.jpg",
+        kind: "giant" 
+    },
+    {
+        keyword: "milkshake",
+        name: "Милшейк",
+        price: 2000,
+        category: "dessert",
+        count: "700 г",
+        image: "images/Милкшейк.jpg",
+        kind: "giant" 
+    },
+    {
+        keyword: "big-ice-cream",
+        name: "Большое шоколадное мороженое",
+        price: 1000,
+        category: "dessert",
+        count: "700 г",
+        image: "images/Большое мороженое.jpg",
+        kind: "giant" 
+    },
 
 ];

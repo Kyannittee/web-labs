@@ -40,6 +40,7 @@ function createDishCard(dish) {
     const card = document.createElement('div');
     card.className = 'dish-card';
     card.setAttribute('data-dish', dish.keyword);//добавляет атрибут к элементу
+
     
     card.innerHTML = `
         <img src="${dish.image}" alt="${dish.name}" onerror="this.src='images/placeholder.jpg'">
