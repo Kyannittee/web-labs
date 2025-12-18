@@ -1,0 +1,117 @@
+/* checkout-panel.css */
+#checkout-panel {
+    position: sticky;
+    bottom: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    display: none; /* Скрыто по умолчанию */
+    z-index: 100;
+    border: 2px solid #3498db;
+}
+
+.checkout-panel-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#checkout-panel h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+#current-order-summary {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+#current-order-summary .order-category {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#current-order-summary .order-category:last-child {
+    border-bottom: none;
+}
+
+#current-order-summary strong {
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+#current-order-summary p {
+    color: #6c757d;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+#checkout-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#total-price-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #27ae60;
+    margin: 0;
+}
+
+.checkout-btn {
+    display: inline-block;
+    background: #27ae60;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.checkout-btn:hover {
+    background: #219653;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(33, 150, 83, 0.3);
+}
+
+.checkout-btn.disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #checkout-panel {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 10px 10px 0 0;
+        margin: 0;
+    }
+    
+    #checkout-actions {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    
+    .checkout-btn {
+        width: 100%;
+    }
+}

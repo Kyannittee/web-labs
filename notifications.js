@@ -1,20 +1,25 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const orderForm = document.getElementById('lunch-order-form');
     
-    if (orderForm) {//обработчик формы
+    if (orderForm) {
         orderForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Предотвращаем отправку
+            e.preventDefault();
             
             const isValid = validateLunchCombo();
             
             if (isValid) {
-                // Если все ок - отправляем форму
                 this.submit();
             }
         });
     }
+});
+
+
+function validateLunchCombo() {
+    // Проверяем, что selectedDishes существует
+    const selectedDishes = window.selectedDishes || {};
     
-    function validateLunchCombo() {
     // Проверяем, что выбраны блюда
     const hasSelectedDishes = Object.values(selectedDishes).some(dish => dish !== null);
     
@@ -29,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const hasSalad = selectedDishes.salad !== null;
     const hasDrink = selectedDishes.drink !== null;
     const hasDessert = selectedDishes.dessert !== null;
-    
     
     // 1. Проверка: Выбран салат, но нет супа или главного
     if (hasSalad && !hasSoup && !hasMain) {
@@ -50,15 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // 4. Проверяем допустимые комбинации (5 вариантов)
-    // Но сначала проверяем, есть ли вообще основные блюда
     const hasAnyMainDish = hasSoup || hasMain || hasSalad;
     
     if (hasAnyMainDish) {
         const isValidCombo = checkValidCombinations(hasSoup, hasMain, hasSalad, hasDrink);
         
         if (!isValidCombo) {
-            // Если комбо не валидно, проверяем что именно не так
-            
             // Возможно, не хватает напитка
             if (hasSoup || hasMain || hasSalad) {
                 if (!hasDrink) {
@@ -85,8 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
     showNotification('Выберите главное блюдо');
     return false;
 }
-    
-    function checkValidCombinations(hasSoup, hasMain, hasSalad, hasDrink) {
+
+function checkValidCombinations(hasSoup, hasMain, hasSalad, hasDrink) {
     // Проверяем 5 допустимых комбинаций
     
     // 1. Суп + Главное + Салат + Напиток
@@ -106,45 +107,49 @@ document.addEventListener('DOMContentLoaded', function() {
     
     return false;
 }
-    
-    function showNotification(message) {
-        // Удаляем существующее уведомление
-        const existingNotification = document.querySelector('.notification-overlay');
-        if (existingNotification) {
-            existingNotification.remove();
-        }
-        
-        // Создаем оверлей
-        const overlay = document.createElement('div');
-        overlay.className = 'notification-overlay';
-        
-        // Создаем само уведомление
-        const notification = document.createElement('div');
-        notification.className = 'notification';
-        
-        notification.innerHTML = `
-            <p>${message}</p>
-            <button class="notification-btn">Окей</button>
-        `;
-        
-        overlay.appendChild(notification);
-        document.body.appendChild(overlay);
-        
-        // Добавляем обработчик для кнопки
-        const okBtn = notification.querySelector('.notification-btn');
-        okBtn.addEventListener('click', function() {
-            overlay.remove();
-        });
-        
-        // Добавляем hover эффект для кнопки
-        okBtn.addEventListener('mouseenter', function() {
-            this.style.backgroundColor = '#2c3e50';
-            this.style.color = 'white';
-        });
-        
-        okBtn.addEventListener('mouseleave', function() {
-            this.style.backgroundColor = '#3498db';
-            this.style.color = 'white';
-        });
+
+function showNotification(message) {
+    // Удаляем существующее уведомление
+    const existingNotification = document.querySelector('.notification-overlay');
+    if (existingNotification) {
+        existingNotification.remove();
     }
-});
+    
+    // Создаем оверлей
+    const overlay = document.createElement('div');
+    overlay.className = 'notification-overlay';
+    
+    // Создаем само уведомление
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    
+    notification.innerHTML = `
+        <p>${message}</p>
+        <button class="notification-btn">Окей</button>
+    `;
+    
+    overlay.appendChild(notification);
+    document.body.appendChild(overlay);
+    
+    // Добавляем обработчик для кнопки
+    const okBtn = notification.querySelector('.notification-btn');
+    okBtn.addEventListener('click', function() {
+        overlay.remove();
+    });
+    
+    // Добавляем hover эффект для кнопки
+    okBtn.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = '#2c3e50';
+        this.style.color = 'white';
+    });
+    
+    okBtn.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = '#3498db';
+        this.style.color = 'white';
+    });
+}
+
+// ДЕЛАЕМ ФУНКЦИИ ДОСТУПНЫМИ ГЛОБАЛЬНО
+window.validateLunchCombo = validateLunchCombo;
+window.showNotification = showNotification;
+window.checkValidCombinations = checkValidCombinations;

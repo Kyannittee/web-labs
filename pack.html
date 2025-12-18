@@ -9,28 +9,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pack.css">
-    <script src="dishes-data.js" defer></script>
+    <link rel="stylesheet" href="checkout-panel.css"> <!-- НОВЫЙ CSS файл -->
+    
+    <script src="api-loader.js" defer></script>
     <script src="display-dishes.js" defer></script>
     <script src="order-manager.js" defer></script>
     <script src="filters.js" defer></script>
     <script src="notifications.js" defer></script>
 </head>
 <body>
-    
     <header>
         <h1>Food Construct</h1>
         <nav>
-            <a href="index.html">Главная</a>
+            <a href="landing.html">Главная</a>
             <a href="index.html#about">О нас</a>
             <a href="pack.html" id="active">Собрать ланч</a>
-            <a href="#orders">Заказы</a>
+            <a href="checkout.html">Оформить заказ</a> 
+            <a href="orders.html">Заказы</a>
             <a href="#contacts">Контакты</a>
         </nav>
     </header>
 
-    
     <main>
-        
         <!-- Блок с доступными комбо -->
         <section id="combo-section">
             <h2>Доступные для заказа комбо</h2>
@@ -141,165 +141,93 @@
                 </div>
             </div>
         </section>
+
+<!-- Секция супов -->
+<section id="soups">
+    <h2>Супы</h2>
+    <div class="filters">
+        <button class="filter-btn" data-kind="meat">Мясные</button>
+        <button class="filter-btn" data-kind="fish">Рыбные</button>
+        <button class="filter-btn" data-kind="veg">Вегетарианские</button>
+    </div>
+    <div class="dishes-grid">
+        <!-- Блюда будут добавлены через JS -->
+    </div>
+</section>
+
+<!-- Секция главных блюд -->
+<section id="main-dishes">
+    <h2>Главные блюда</h2>
+    <div class="filters">
+        <button class="filter-btn" data-kind="meat">Мясные</button>
+        <button class="filter-btn" data-kind="fish">Рыбные</button>
+        <button class="filter-btn" data-kind="veg">Вегетарианские</button>
+    </div>
+    <div class="dishes-grid">
+        <!-- Блюда будут добавлены через JS -->
+    </div>
+</section>
+
+<!-- Секция напитков -->
+<section id="drinks">
+    <h2>Напитки</h2>
+    <div class="filters">
+        <button class="filter-btn" data-kind="hot">Горячие</button>
+        <button class="filter-btn" data-kind="cold">Холодные</button>
+    </div>
+    <div class="dishes-grid">
+        <!-- Блюда будут добавлены через JS -->
+    </div>
+</section>
+
+<!-- Секция салатов -->
+<section id="salads">
+    <h2>Салаты и стартеры</h2>
+    <div class="filters">
+        <button class="filter-btn" data-kind="meat">Мясные</button>
+        <button class="filter-btn" data-kind="fish">Рыбные</button>
+        <button class="filter-btn" data-kind="veg">Вегетарианские</button>
+    </div>
+    <div class="dishes-grid">
+        <!-- Блюда будут добавлены через JS -->
+    </div>
+</section>
+
+<!-- Секция десертов -->
+<section id="desserts">
+    <h2>Десерты</h2>
+    <div class="filters">
+        <button class="filter-btn" data-kind="small">Маленькие</button>
+        <button class="filter-btn" data-kind="medium">Средние</button>
+        <button class="filter-btn" data-kind="large">Большие</button>
+    </div>
+    <div class="dishes-grid">
+        <!-- Блюда будут добавлены через JS -->
+    </div>
+</section>
         
-        <section id="soups">
-            <h2>Выберите супы</h2>
-            <div class="filters">
-                <button class="filter-btn" data-kind="fish">рыбный</button>
-                <button class="filter-btn" data-kind="meat">мясной</button>
-                <button class="filter-btn" data-kind="veg">вегетарианский</button>
-            </div>
-
-            <div class="dishes-grid">
-                <!-- Блюда будут добавлены через JavaScript -->
-            </div>
-        </section>
-
-        
-        <section id="main-dishes">
-            <h2>Выберите главные блюда</h2>
-            <div class="filters">
-                <button class="filter-btn" data-kind="fish">рыбное</button>
-                <button class="filter-btn" data-kind="meat">мясное</button>
-                <button class="filter-btn" data-kind="veg">вегетарианское</button>
-            </div>
-
-            <div class="dishes-grid">
-        <!-- Блюда будут добавлены через JavaScript -->
-            </div>
-        </section>
-
-        <section id="salads">
-            <h2>Выберите салат или стартер</h2>
-    
-            <div class="filters">
-                <button class="filter-btn" data-kind="fish">рыбный</button>
-                <button class="filter-btn red-filter" data-kind="meat">мясной</button>
-                <button class="filter-btn" data-kind="veg">вегетарианский</button>
-            </div>
-    
-            <div class="dishes-grid">
-        <!-- Блюда будут добавлены через JavaScript -->
-             </div>
-        </section>
-
-
-        <section id="drinks">
-            <h2>Выберите напитки</h2>
-            <div class="filters">
-                <button class="filter-btn" data-kind="cold">холодный</button>
-                <button class="filter-btn" data-kind="hot">горячий</button>
-                <button class="filter-btn red-filter" data-kind="carbonated">газированный</button>
-            </div>
-
-            <div class="dishes-grid">
-        <!-- Блюда будут добавлены через JavaScript -->
-            </div>
-        </section>
-
-
-        <section id="desserts">
-            <h2>Выберите десерт</h2>
-    
-            <div class="filters">
-                <button class="filter-btn" data-kind="small">маленькая порция</button>
-                <button class="filter-btn" data-kind="medium">средняя порция</button>
-                <button class="filter-btn" data-kind="large">большая порция</button>
-                <button class="filter-btn red-filter" data-kind="giant">гигантская порция</button>
-            </div>
-    
-            <div class="dishes-grid">
-        <!-- Блюда будут добавлены через JavaScript -->
+        <!-- ВМЕСТО ФОРМЫ ОФОРМЛЕНИЯ - ПАНЕЛЬ CHECKOUT -->
+        <section id="checkout-panel">
+            <div class="checkout-panel-content">
+                <h3>Ваш заказ</h3>
+                <div id="current-order-summary">
+                    <!-- Текущий заказ будет здесь через JS -->
+                </div>
+                <div id="checkout-actions">
+                    <p id="total-price-display">Итого: 0₽</p>
+                    <a href="checkout.html" id="checkout-link" class="checkout-btn disabled">
+                        Перейти к оформлению
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Форма заказа -->
-<section id="order-form">
-    <div class="form-container">
-        <h2>Сделать заказ</h2>
-        <form id="lunch-order-form" action="https://httpbin.org/post" method="POST">
-            <div class="form-columns">
-                <!-- Блок с заказом клиента -->
-                <div class="order-column">
-                    <h3>Ваш заказ</h3>
-                    
-                    <div class="form-group">
-                        <label for="comment">Комментарии к заказу</label>
-                        <textarea id="comment" name="comment" rows="4" placeholder="Ваши пожелания..."></textarea>
-                    </div>
-                </div>
-                
-                <!-- Блок с данными клиента -->
-                <div class="customer-column">
-                    <h3>Данные для доставки</h3>
-                    
-                    <div class="form-group">
-                        <label for="name">Имя</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="newsletter" name="newsletter" checked>
-                        <label for="newsletter">Получать информацию о скидках и акциях</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Номер телефона</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="address">Адрес доставки</label>
-                        <input type="text" id="address" name="address" required>
-                        <small class="form-hint">Доставка осуществляется только по Москве</small>
-                    </div>
-                    
-                    <!-- Блок выбора типа доставки -->
-                    <div class="form-group">
-                        <label>Время доставки:</label>
-                        <div class="radio-group">
-                            <div class="radio-option">
-                                <input type="radio" id="time-soon" name="delivery_time" value="soon" required>
-                                <label for="time-soon">Как можно скорее</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" id="time-specific" name="delivery_time" value="specific" required>
-                                <label for="time-specific">К указанному времени</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Блок для указания конкретного времени -->
-                    <div class="form-group">
-                        <label for="specific-time">Укажите время доставки</label>
-                        <input type="time" id="specific-time" name="specific_time" min="07:00" max="23:00" step="300">
-                    </div>
-
-                    <!-- Подпись о доступном времени -->
-                    <div class="form-hint-block">
-                        <small>Доступное время доставки с 7:00 до 23:00</small>
-                    </div>
-                    
-                    <div class="form-buttons">
-                        <button type="reset" class="reset-btn">Сбросить</button>
-                        <button type="submit" class="submit-btn">Отправить</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</section>
-
- <footer id="contacts">
+    <footer id="contacts">
         <h2>Контакты</h2>
         <p>г. Москва</p>
         <p>Телефон: <a href="tel:+74951234567">+7 (000) 000 00 00</a></p>
         <p>Часы работы: ежедневно с 7:00 до 23:00</p>
     </footer>
-    
+</body>
+</html>
